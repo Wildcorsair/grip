@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { UserService } from "../services/user.service";
+
+interface IUser {
+  results: any[];
+  info: any[];
+}
 
 @Component({
     selector: 'app-home',
@@ -6,4 +12,16 @@ import { Component } from '@angular/core';
     styleUrls: ['./home.component.sass']
 })
 
-export class HomeComponent {}
+export class HomeComponent {
+  users = [];
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    this.userService.getUsers().subscribe((data: IUser) => {
+      data.results.map(item => {
+        this.users.push(item);
+      });
+    });
+  }
+}

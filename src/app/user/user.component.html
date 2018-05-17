@@ -1,1 +1,7 @@
-<h1>User Component</h1>
+<div class="col-md-3 col-lg-3">
+  <div class="user-card" appHover>
+    <div [ngClass]="{'marked': isMarked}">User name: {{ user.name.title }}. {{ user.name.first | uppercase }}</div>
+    <div class="avatar"><img src="{{ user.picture.thumbnail }}"></div>
+    <button (click)="markUser()" class="btn btn-default">Mark</button>
+  </div>
+</div>

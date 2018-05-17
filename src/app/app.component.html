@@ -1,8 +1,13 @@
+<nav class="navbar navbar-default">
+  <ul class="nav navbar-nav">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/about">About</a></li>
+  </ul>
+</nav>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-home></app-home>
-      <app-user></app-user>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

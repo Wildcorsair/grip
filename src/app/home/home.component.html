@@ -1,1 +1,18 @@
-<h1>Home Component</h1>
+<div class="row">
+  <div class="col-md-12 search-bar">
+    <div class="col-md-1">
+      Search:
+    </div>
+    <div class="col-md-4">
+      <input class="form-control" type="text" value="" [(ngModel)]="searchText">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <app-user
+      *ngFor="let u of users | search:searchText"
+      [user] = "u"
+    ></app-user>
+  </div>
+</div>
